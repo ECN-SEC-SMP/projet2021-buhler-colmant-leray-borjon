@@ -11,6 +11,8 @@ class Plateau {
         vector<Joueur> joueursInactifs;
 
     public:
+        Plateau();
+
         void initPlateau();
         void affichage();
         Case avance(Case case, int d);
