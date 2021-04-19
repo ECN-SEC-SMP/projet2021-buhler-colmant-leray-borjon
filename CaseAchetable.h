@@ -1,13 +1,18 @@
 #pragma once
 
 #include <stdlib.h>
+#include <iostream>
+#include "Case.h"
 
 class CaseAchetable: public Case {
   private:
     joueur *proprio;
-    int prix;
+    int prix;    
+
+  protected :
+
   public:
-    CaseAchetable();
-    void CaseAchetable::acheter();
+    CaseAchetable():Case(int ID, string nom);
+    void acheter(Joueur)
     
 };

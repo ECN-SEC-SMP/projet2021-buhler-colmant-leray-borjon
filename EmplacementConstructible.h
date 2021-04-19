@@ -1,9 +1,12 @@
 #pragma once
 
-struct bat {
+/*struct bat {
   int montant_bat;
   bat *suivant;
-}
+}*/
+
+#include <iostream>
+#include "CaseAchetable.h"
 
 class EmplacementConstructible: public CaseAchetable
 {
@@ -15,6 +18,7 @@ class EmplacementConstructible: public CaseAchetable
 
   public:
     //constructeurs
-    EmplacementConstructible(int batiment, int coefValorisation);
+    EmplacementConstructible(int batiment, int coefValorisation):CaseAchetable(int ID, string nom);
+    action(Joueur joueur, int de);
 
 };

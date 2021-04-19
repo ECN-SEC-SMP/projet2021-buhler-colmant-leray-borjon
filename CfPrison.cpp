@@ -4,8 +4,10 @@ using namespace std;
 
 #include "Case.h"
 #include "CaseFixe.h"
+#include "CfPrison.h"
 
 //constructeur
-CaseFixe::CaseFixe(){
+CfPrison::CfPrison(){
 
   }
+

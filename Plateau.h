@@ -1,13 +1,14 @@
 #pragma once
 
 #include <stdlib.h>
-#include "joueur.h"
+#include "Joueur.h"
+#include "Case.h"
 
 using namespace std;
 
 class Plateau {
     private:
-        Case[40] plateau;
+        Case plateau[40];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 
@@ -16,7 +17,7 @@ class Plateau {
 
         void initPlateau();
         void affichage();
-        Case avance(Case case, int d);
+        Case avance(Case c, int d);
         void finDePartie();
         int nbGares(Joueur j);
 };
