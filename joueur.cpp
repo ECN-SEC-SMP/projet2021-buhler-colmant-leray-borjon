@@ -20,6 +20,7 @@ bool joueur::debiter(float montant) {
     return false;
 }
 
+//constructeur
 joueur::joueur(int _numero) {
     numero = _numero;
     solde = 0.0;

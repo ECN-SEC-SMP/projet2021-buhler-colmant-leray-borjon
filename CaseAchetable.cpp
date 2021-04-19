@@ -2,8 +2,6 @@
 #include "Case.h"
 #include "CaseAchetable.h"
 
-
-
 CaseAchetable::CaseAchetable(){
   this->proprio = NULL;
 
