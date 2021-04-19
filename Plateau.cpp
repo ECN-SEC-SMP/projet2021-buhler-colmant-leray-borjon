@@ -10,12 +10,12 @@ Plateau::initPlateau() {
     cout << "Combien de joueurs vont jouer ? (Minimum 2)" << endl;
     int nbJoueurs;
     string nomJoueur;
-    Joueur j;
+    joueur j;
     cin >> nbJoueurs;
     cout << "Rentrez le nom des joueurs un par un : " << endl;
     for (int i = 1; i <= nbJoueurs ; i++) {
         cin >> nomJoueur;
-        j = Joueur(nomJoueur, i);
+        j = joueur(nomJoueur, i);
         this->joueursActifs.push_back(j);
     }
 

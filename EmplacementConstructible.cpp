@@ -11,3 +11,7 @@ EmplacementConstructible::EmplacementConstructible(int batiment, int coeffValori
     //this->coeffValorisation;
   }
 }
+
+int loyer(Case c){
+  
+}
