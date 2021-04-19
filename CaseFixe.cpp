@@ -8,4 +8,4 @@ using namespace std;
 //constructeur
 CaseFixe::CaseFixe(){
 
-  }
+}

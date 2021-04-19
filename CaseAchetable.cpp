@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Case.h"
 #include "CaseAchetable.h"
+#include "Joueur.h"
 
 CaseAchetable::CaseAchetable(){
   this->proprio = NULL;
@@ -22,7 +23,7 @@ void CaseAchetable::action(Joueur &j, int d){
   }
 }
 
-
+/*
 void CaseAchetable::acheter(){
 
 }

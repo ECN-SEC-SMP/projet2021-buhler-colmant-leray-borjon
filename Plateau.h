@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdlib.h>
+#include <vector>
 #include "Joueur.h"
 #include "Case.h"
 
@@ -8,7 +9,7 @@ using namespace std;
 
 class Plateau {
     private:
-        vector<Case> plateau[40];
+        vector<Case> plateau[39];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 
@@ -22,5 +23,5 @@ class Plateau {
         int nbGares(Joueur j);
         void jeu();
         void removeJoueur(Joueur j);
-        boolean isGameOver();
+        bool isGameOver();
 };
