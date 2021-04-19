@@ -3,6 +3,7 @@
 #include "EmplacementConstructible.h"
 #include <iostream>
 
+using namespace std;
 
 Plateau::Plateau() {
 
@@ -52,4 +53,40 @@ void Plateau::initPlateau() {
 
 Case Plateau::avance(Case c, int n) {
     return this->plateau[c.getId() + n];
+}
+
+void Plateau::affichage() {
+    for (Case c : this->plateau) {
+        c.affichage();
+    }
+}
+
+int Plateau::nbGare(Joueur j) {
+    return j.nbGare();
+}
+
+void Plateau::jeu() {
+    while(!this->isGameOver()) {
+        for (Joueur j : this->joueursActif) {
+            j.tourDeJeu();
+            this->affichage();
+        }
+    }
+}
+
+void Plateau::removeJoueur(Joueur j) {
+    vector<Joueur>::iterator it;
+    it = find(this->joueursActifs.begin(), this->joueursActifs.end(), j);
+    if(it != this->joueursActifs.end()) {
+        this->joueursActifs.erase(it);
+        this->joueursInactifs.push_back(j);
+    } 
+}
+
+boolean isGameOver() {
+    if (this->joueursActifs.size() <= 1) {
+        return true;
+    } else {
+        return false;
+    }
 }
