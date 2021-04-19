@@ -13,5 +13,6 @@ class Case
   public:
     //constructeurs
     Case(int ID, string nom);
+    Case();
 
 };

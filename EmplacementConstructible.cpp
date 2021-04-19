@@ -6,10 +6,9 @@ using namespace std;
 #include "EmplacementConstructible.h"
 
 //constructeur
-EmplacementConstructible::EmplacementConstructible(int batiment, int coeffValorisation){
-    //this->batiment;
-    //this->coeffValorisation;
-  }
+EmplacementConstructible::EmplacementConstructible(int ID, string nom): CaseAchetable(ID, nom) {
+    this->ID = ID;
+    this->nom = nom;
 }
 
 int loyer(Case c){

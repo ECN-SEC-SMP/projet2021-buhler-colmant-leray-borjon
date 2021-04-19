@@ -11,6 +11,6 @@ class CaseFixe: public Case
 
   public:
     //constructeurs
-    CaseFixe():Case(int ID, string nom);
+    CaseFixe(int ID, string nom);
 
 };
