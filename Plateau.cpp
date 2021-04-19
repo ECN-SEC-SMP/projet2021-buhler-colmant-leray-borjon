@@ -66,7 +66,12 @@ int Plateau::nbGare(Joueur j) {
 }
 
 void Plateau::jeu() {
-
+    while(!this->isGameOver()) {
+        for (Joueur j : this->joueursActif) {
+            j.tourDeJeu();
+            this->affichage();
+        }
+    }
 }
 
 void Plateau::removeJoueur(Joueur j) {

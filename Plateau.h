@@ -21,4 +21,6 @@ class Plateau {
         void finDePartie();
         int nbGares(Joueur j);
         void jeu();
+        void removeJoueur(Joueur j);
+        boolean isGameOver();
 };
