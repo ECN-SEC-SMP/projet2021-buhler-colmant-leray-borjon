@@ -11,7 +11,7 @@
 class Joueur {
 private:
     string nom;
-    int id;
+    int ID;
     int fortune;
     Case position;
     Plateau plat;
@@ -19,7 +19,7 @@ private:
     
 public:
     string getNom() const;
-    int getId() const;
+    int getID() const;
     int getFortune() const;
     void setFortune(int fortune);
 
@@ -29,10 +29,11 @@ public:
     void tourDeJeu();
 
     // Constructeurs
-    Joueur(string nom, int id, Case position, Plateau plat);
+    Joueur(string nom, int ID, Case position, Plateau plat);
 
     // Destructeur
     ~Joueur();
 };
 
 #endif /* Joueur_h */
+

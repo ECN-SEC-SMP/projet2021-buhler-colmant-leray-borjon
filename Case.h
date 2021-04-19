@@ -11,7 +11,11 @@ class Case
     string nom;
 
   public:
+    string getNom() const;
+    
     //constructeurs
+    Case();
     Case(int ID, string nom);
+
 
 };
