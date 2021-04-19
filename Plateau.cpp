@@ -1,4 +1,6 @@
 #include "Plateau.h"
+#include "Gare.h"
+#include "EmplacementConstructible.h"
 #include <iostream>
 
 
@@ -6,7 +8,7 @@ Plateau::Plateau() {
 
 }
 
-Plateau::initPlateau() {
+void Plateau::initPlateau() {
     cout << "Combien de joueurs vont jouer ? (Minimum 2)" << endl;
     int nbJoueurs;
     string nomJoueur;
@@ -30,4 +32,24 @@ Plateau::initPlateau() {
     this->plateau[10] = CasePrison(10);
     this->plateau[20] = CaseChance(20);
     this->plateau[30] = CaseAllerPrison(30);
+
+    // Ajout des cases Chance
+    this->plateau[2] = CaseChance(2);
+    this->plateau[4] = CaseChance(4);
+    this->plateau[7] = CaseChance(7);
+    this->plateau[12] = CaseChance(12);
+    this->plateau[17] = CaseChance(17);
+    this->plateau[22] = CaseChance(22);
+    this->plateau[28] = CaseChance(28);
+    this->plateau[33] = CaseChance(33);
+    this->plateau[36] = CaseChance(36);
+    this->plateau[38] = CaseChance(38);
+
+    // Ajout des rues
+    this->plateau[2] = Empl(2);
+
+}
+
+Case Plateau::avance(Case c, int n) {
+    return this->plateau[c.getId() + n];
 }
