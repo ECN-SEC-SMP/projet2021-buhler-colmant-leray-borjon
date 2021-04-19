@@ -2,17 +2,18 @@
 #include <stdlib.h>
 #include <iostream>
 
+
 using namespace std;
 
-string Joueur::getNom() {
+string Joueur::getNom() const {
     return nom;
 }
 
-int Joueur::getId() {
+int Joueur::getId() const {
     return id;
 }
 
-int Joueur::getFortune() {
+int Joueur::getFortune() const {
     return fortune;
 }
 
@@ -21,7 +22,7 @@ void Joueur::setFortune(int fortune) {
 }
 
 void Joueur::paiement(int somme, Joueur destinataire) {
-    destinataire -> setFortune(destinataire -> getFortune() + somme);
+    destinataire.setFortune(destinataire.getFortune() + somme);
     this -> fortune -= somme;
 }
 
@@ -31,7 +32,7 @@ int Joueur::lanceDe() {
 }
 
 //Ajoute une propriété à un joueur
-void Joueur::addPropriete(Case newPropriete) {
+void Joueur::addPropriete(CaseAchetable newPropriete) {
     vproprietes.push_back(newPropriete);
 }
 
