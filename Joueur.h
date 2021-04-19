@@ -12,7 +12,7 @@ class Joueur {
 private:
     string nom;
     int id;
-    int fortune = 100000;
+    int fortune;
     Case position;
     Plateau plat;
     vector<CaseAchetable> vproprietes;
@@ -28,10 +28,10 @@ public:
     void paiement(int somme, Joueur destinataire);
     void tourDeJeu();
 
-    // constructeurs
-    Joueur(string nom, int id);
+    // Constructeurs
+    Joueur(string nom, int id, Case position, Plateau plat);
 
-    // destructeur
+    // Destructeur
     ~Joueur();
 };
 

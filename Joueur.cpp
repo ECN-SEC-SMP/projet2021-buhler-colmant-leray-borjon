@@ -21,9 +21,18 @@ void Joueur::setFortune(int fortune) {
     this->fortune = fortune;
 }
 
+//Si le joueur a assez d'argent pour payer, il paye le joueur destinataire. Sinon, il donne le reste de sa fortune au joueur destinataire et est éliminé.
 void Joueur::paiement(int somme, Joueur destinataire) {
+  if(somme < this->fortune){
     destinataire.setFortune(destinataire.getFortune() + somme);
-    this -> fortune -= somme;
+    this->fortune -= somme;
+  }
+  else
+  {
+    destinataire.setFortune(destinataire.getFortune() + this->fortune);
+    this->fortune -= somme;
+    plat.remove_player(this);
+  }
 }
 
 //Lancement d'un dé à 6 faces
@@ -42,6 +51,16 @@ void Joueur::tourDeJeu() {
     cout << "Le joueur" << this->nom << "est en case" << this->id << "(" << this->position << ")" << endl;
 }
 
+
+
+//Constructeur
+Joueur::Joueur(string nom, int id, Case position, Plateau plat){
+    this->nom=nom;
+    this->id=id;
+    this->fortune=100000;
+    this->position=position;
+    this->plat=plat;
+}
 
 //Destructeurs
 Joueur::~Joueur() {
