@@ -8,7 +8,7 @@ using namespace std;
 
 class Plateau {
     private:
-        Case plateau[40];
+        vector<Case> plateau[40];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 
@@ -20,4 +20,5 @@ class Plateau {
         Case avance(Case c, int d);
         void finDePartie();
         int nbGares(Joueur j);
+        void jeu();
 };
