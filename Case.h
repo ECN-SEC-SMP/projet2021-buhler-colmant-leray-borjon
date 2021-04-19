@@ -1,12 +1,14 @@
 #pragma once
 
+#include <iostream>
+
 class Case
 {
   private:
-    int ID;
-    string nom;
 
   protected:
+    int ID;
+    string nom;
 
   public:
     //constructeurs

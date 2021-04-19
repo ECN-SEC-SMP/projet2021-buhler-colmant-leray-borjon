@@ -6,7 +6,6 @@ using namespace std;
 
 //constructeur
 Case::Case(int ID, string nom){
-    //this->ID;
-    //this->nom;
+    this->ID;
+    this->nom;
   }
-}

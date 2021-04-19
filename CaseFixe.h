@@ -1,15 +1,16 @@
 #pragma once
 
+#include <iostream>
+#include "Case.h"
+
 class CaseFixe: public Case
 {
   private:
-    int ID;
-    string nom;
 
   protected:
 
   public:
     //constructeurs
-    CaseFixe(int ID, string nom);
+    CaseFixe():Case(int ID, string nom);
 
 };

@@ -4,8 +4,13 @@ using namespace std;
 
 #include "Case.h"
 #include "CaseFixe.h"
+#include "CfAllerPrison.h"
 
 //constructeur
-CaseFixe::CaseFixe(){
+CfAllerPrison::CfAllerPrison(){
+    
+}
 
-  }
+CfAllerPrison::action(Joueur joueur, int de){
+  
+}
