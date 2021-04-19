@@ -9,3 +9,7 @@ using namespace std;
 CaseFixe::CaseFixe(){
 
   }
+
+void CaseFixe::affichage(){
+    cout<< this->nom << endl;
+  }

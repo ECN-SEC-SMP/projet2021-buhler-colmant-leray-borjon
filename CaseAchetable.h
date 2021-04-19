@@ -3,16 +3,19 @@
 #include <stdlib.h>
 #include <iostream>
 #include "Case.h"
+#include "Joueur.h"
+
 
 class CaseAchetable: public Case {
   private:
-    joueur *proprio;
+    Joueur *proprio;
     int prix;    
 
   protected :
 
   public:
     CaseAchetable():Case(int ID, string nom);
-    void acheter(Joueur)
+    void acheter(Joueur);
+    void affichage();
     
 };
