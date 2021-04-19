@@ -7,7 +7,8 @@ using namespace std;
 #include "CfPrison.h"
 
 //constructeur
-CfPrison::CfPrison(){
-
-  }
+CfPrison::CfPrison(int ID, string nom): CaseFixe(ID, nom) {
+  this->nom = nom;
+  this->ID = ID;
+}
 

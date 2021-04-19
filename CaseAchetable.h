@@ -5,7 +5,6 @@
 #include "Case.h"
 #include "Joueur.h"
 
-
 class CaseAchetable: public Case {
   private:
     Joueur *proprio;
@@ -14,7 +13,7 @@ class CaseAchetable: public Case {
   protected :
 
   public:
-    CaseAchetable():Case(int ID, string nom);
+    CaseAchetable(int ID, string nom);
     void acheter(Joueur);
     void affichage();
     

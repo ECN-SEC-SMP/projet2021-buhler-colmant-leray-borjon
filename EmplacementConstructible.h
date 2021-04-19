@@ -11,14 +11,14 @@
 class EmplacementConstructible: public CaseAchetable
 {
   private:
-    int batiment;
-    int coefValorisation;
+    // int batiment;
+    // int coefValorisation;
 
   protected:
 
   public:
     //constructeurs
-    EmplacementConstructible(int batiment, int coefValorisation):CaseAchetable(int ID, string nom);
-    action(Joueur joueur, int de);
+    EmplacementConstructible(int ID, string nom);
+    void action(Joueur joueur, int de);
 
 };

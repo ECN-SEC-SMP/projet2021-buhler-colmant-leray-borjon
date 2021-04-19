@@ -7,7 +7,7 @@ using namespace std;
 #include "CfChance.h"
 
 //constructeur
-CfChance::CfChance(){
-
-  }
+CfChance::CfChance(int ID, string nom): CaseFixe(ID, nom) {
+  this->nom = nom;
+  this->ID = ID;
 }
