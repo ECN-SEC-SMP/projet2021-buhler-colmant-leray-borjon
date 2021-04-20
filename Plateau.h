@@ -11,7 +11,7 @@ using namespace std;
 
 class Plateau {
     private:
-        Case* plateau[39];
+        Case* plateau[40];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 

@@ -4,6 +4,5 @@
 int main() {
     Plateau plat = Plateau();
     plat.initPlateau();
-    cout << "ok" << endl;
     plat.jeu();
 }

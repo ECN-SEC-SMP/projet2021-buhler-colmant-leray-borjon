@@ -14,7 +14,7 @@ Plateau::Plateau() {
 
 void Plateau::initPlateau() {
 
-    for (int i = 0; i < 39; i++ ) {
+    for (int i = 0; i < 40; i++ ) {
         this->plateau[i] = nullptr;
     }
 
@@ -43,7 +43,29 @@ void Plateau::initPlateau() {
     this->plateau[38] = new CfChance(38, "Case chance");
 
     // Ajout des rues   
-    // this->plateau[1] = EmplacementConstructible(1);
+    this->plateau[1] = new EmplacementConstructible(1, "Boulevard de Belleville");
+    this->plateau[3] = new EmplacementConstructible(3, "Rue Lecourbe");
+    this->plateau[6] = new EmplacementConstructible(6, "Rue de Vaugirard");
+    this->plateau[8] = new EmplacementConstructible(8, "Rue de Courcelles");
+    this->plateau[9] = new EmplacementConstructible(9, "Avenue de la République");
+    this->plateau[11] = new EmplacementConstructible(11, "Boulevard de la Villette");
+    this->plateau[13] = new EmplacementConstructible(13, "Avenue de Neuilly");
+    this->plateau[14] = new EmplacementConstructible(14, "Rue de Paradis");
+    this->plateau[16] = new EmplacementConstructible(16, "Avenue Mozart");
+    this->plateau[18] = new EmplacementConstructible(18, "Boulevard Saint-Michel");
+    this->plateau[19] = new EmplacementConstructible(19, "Place Pigalle");
+    this->plateau[21] = new EmplacementConstructible(21, "Avenue Matignon");
+    this->plateau[23] = new EmplacementConstructible(23, "Boulevard Malesherbes");
+    this->plateau[24] = new EmplacementConstructible(24, "Avenue Henri-Martin");
+    this->plateau[26] = new EmplacementConstructible(26, "Faubourg Saint-Honoré");
+    this->plateau[27] = new EmplacementConstructible(27, "Place de la Bourse");
+    this->plateau[29] = new EmplacementConstructible(29, "Rue Lafayette");
+    this->plateau[31] = new EmplacementConstructible(31, "Avenue de Breteuil");
+    this->plateau[32] = new EmplacementConstructible(32, "Avenue Foch");
+    this->plateau[34] = new EmplacementConstructible(34, "Boulevard des Capucines");
+    this->plateau[37] = new EmplacementConstructible(37, "Avenue des Champs-Elysées");
+    this->plateau[39] = new EmplacementConstructible(39, "Rue de la Paix");
+
 
     // cout << "Combien de joueurs vont jouer ? (Minimum 2)" << endl;
     // int nbJoueurs;
@@ -71,7 +93,7 @@ Case* Plateau::avance(Case* c, int n) {
 }
 
 void Plateau::jeu() {
-    for (int i = 0; i < 39; i++ ) {
+    for (int i = 0; i < 40; i++ ) {
         if (this->plateau[i] != nullptr) {
             this->plateau[i]->affichage();
         }
