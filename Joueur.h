@@ -21,6 +21,7 @@ public:
     string getNom() const;
     int getId() const;
     int getFortune() const;
+    Case* getPosition() const;
     void setFortune(int fortune);
 
     int lanceDe();

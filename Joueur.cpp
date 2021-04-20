@@ -6,15 +6,19 @@
 using namespace std;
 
 string Joueur::getNom() const {
-    return nom;
+    return this->nom;
 }
 
 int Joueur::getId() const {
-    return id;
+    return this->id;
 }
 
 int Joueur::getFortune() const {
-    return fortune;
+    return this->fortune;
+}
+
+Case* Joueur::getPosition() const {
+    return this->position;
 }
 
 void Joueur::setFortune(int fortune) {

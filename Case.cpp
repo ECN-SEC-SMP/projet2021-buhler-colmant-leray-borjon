@@ -8,5 +8,8 @@ using namespace std;
 Case::Case(int ID, string nom){
     this->ID;
     this->nom;
-  }
+}
 
+int Case::getID() {
+  return this->ID;
+}
