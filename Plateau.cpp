@@ -31,29 +31,29 @@ void Plateau::initPlateau() {
     //this->plateau[30] = CaseAllerPrison(30, "Aller en prison");
 
     // Ajout des cases Chance
-    // this->plateau[2] = CaseChance(2);
-    // this->plateau[4] = CaseChance(4);
-    // this->plateau[7] = CaseChance(7);
-    // this->plateau[12] = CaseChance(12);
-    // this->plateau[17] = CaseChance(17);
-    // this->plateau[22] = CaseChance(22);
-    // this->plateau[28] = CaseChance(28);
-    // this->plateau[33] = CaseChance(33);
-    // this->plateau[36] = CaseChance(36);
-    // this->plateau[38] = CaseChance(38);
+    this->plateau[2] = new CfChance(2, "Case chance");
+    this->plateau[4] = new CfChance(4, "Case chance");
+    this->plateau[7] = new CfChance(7, "Case chance");
+    this->plateau[12] = new CfChance(12, "Case chance");
+    this->plateau[17] = new CfChance(17, "Case chance");
+    this->plateau[22] = new CfChance(22, "Case chance");
+    this->plateau[28] = new CfChance(28, "Case chance");
+    this->plateau[33] = new CfChance(33, "Case chance");
+    this->plateau[36] = new CfChance(36, "Case chance");
+    this->plateau[38] = new CfChance(38, "Case chance");
 
     // Ajout des rues   
     // this->plateau[1] = EmplacementConstructible(1);
 
-    cout << "Combien de joueurs vont jouer ? (Minimum 2)" << endl;
-    int nbJoueurs;
-    string nomJoueur;
-    cin >> nbJoueurs;
-    cout << "Rentrez le nom des joueurs un par un : " << endl;
-    for (int i = 1; i <= nbJoueurs ; i++) {
-        cin >> nomJoueur;
-        this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], this));
-    }
+    // cout << "Combien de joueurs vont jouer ? (Minimum 2)" << endl;
+    // int nbJoueurs;
+    // string nomJoueur;
+    // cin >> nbJoueurs;
+    // cout << "Rentrez le nom des joueurs un par un : " << endl;
+    // for (int i = 1; i <= nbJoueurs ; i++) {
+    //     cin >> nomJoueur;
+    //     this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], this));
+    // }
 }
 
 Case* Plateau::avance(Case* c, int n) {

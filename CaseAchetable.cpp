@@ -30,7 +30,7 @@ CaseAchetable::CaseAchetable(int ID, string nom) : Case(ID, nom) {
 //}
 
 void CaseAchetable::affichage(){
-  cout<< this->nom << "(coût : " << this->prix << ")";
+  cout<< "[" << this->ID << "] - " << this->nom << "(coût : " << this->prix << ")";
   if (proprio!=nullptr){
     cout<< proprio->getNom() << endl;
   }
