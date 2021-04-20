@@ -2,7 +2,6 @@
 #include <stdlib.h>
 using namespace std;
 
-#include "Case.h"
 #include "CaseFixe.h"
 #include "CfAllerPrison.h"
 

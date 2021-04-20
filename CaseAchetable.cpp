@@ -9,22 +9,6 @@ CaseAchetable::CaseAchetable(int ID, string nom) : Case(ID, nom) {
   this->ID = ID;
 }
 
-<<<<<<< HEAD
-void CaseAchetable::action(Joueur &j, int de){
-  // achetable ?
-  // paiement ?? fortune assez élevée ?
-  // si oui -> addPropriete(CaseAchetable position)
-  if (proprio!=NULL){
-    j.paiement (loyer(),&proprio);
-  }
-  else if (de%2==1){ // lancer de dé impair
-    if (j.getFortune()>1000){ // Remplacez 1000 par le prix d'achat spécifique de la  case
-    j.setFortune(j.getFortune()-1000);
-      j.addPropriete(j.position);
-      }
-  }
-}
-=======
 // void CaseAchetable::action(Joueur &j, int d){
 //   // achetable ?
 //   // paiement ?? fortune assez élevée ?
@@ -39,13 +23,11 @@ void CaseAchetable::action(Joueur &j, int de){
 //   //     }
 //   // }
 // }
->>>>>>> Plateau
 
 
 // void CaseAchetable::acheter(){
 
-<<<<<<< HEAD
-}
+//}
 
 void CaseAchetable::affichage(){
   cout<< this->nom << "(coût : " << this->prix << ")";
@@ -56,6 +38,3 @@ void CaseAchetable::affichage(){
     cout<< "- sans propriétaire" << endl;
   }
 }
-=======
-// }
->>>>>>> Plateau

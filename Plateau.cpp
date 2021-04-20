@@ -14,16 +14,20 @@ Plateau::Plateau() {
 
 void Plateau::initPlateau() {
 
+    for (int i = 0; i < 39; i++ ) {
+        this->plateau[i] = nullptr;
+    }
+
     // Ajout des gares
-    this->plateau[5] = Gare(5, "Gare Montparnasse");
-    this->plateau[15] = Gare(15, "Gare de Lyon");
-    this->plateau[25] = Gare(25, "Gare du Nord");
-    this->plateau[35] = Gare(35, "Gare Saint-Lazare");
+    this->plateau[5] = new Gare(5, "Gare Montparnasse");
+    this->plateau[15] = new Gare(15, "Gare de Lyon");
+    this->plateau[25] =  new Gare(25, "Gare du Nord");
+    this->plateau[35] = new Gare(35, "Gare Saint-Lazare");
 
     // Ajout des cases fixes
-    this->plateau[0] = CfDepart(0, "Départ");
-    this->plateau[10] = CfPrison(10, "Prison");
-    this->plateau[20] = CfChance(20, "Case chance");
+    this->plateau[0] = new CfDepart(0, "Départ");
+    this->plateau[10] = new CfPrison(10, "Prison");
+    this->plateau[20] = new CfChance(20, "Case chance");
     //this->plateau[30] = CaseAllerPrison(30, "Aller en prison");
 
     // Ajout des cases Chance
@@ -48,11 +52,11 @@ void Plateau::initPlateau() {
     cout << "Rentrez le nom des joueurs un par un : " << endl;
     for (int i = 1; i <= nbJoueurs ; i++) {
         cin >> nomJoueur;
-        this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], *this));
+        this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], this));
     }
 }
 
-// Case Plateau::avance(Case c, int n) {
+Case* Plateau::avance(Case* c, int n) {
 //     return this->plateau[c.getId() + n];
 // }
 
@@ -64,25 +68,32 @@ void Plateau::initPlateau() {
 
 // int Plateau::nbGare(Joueur j) {
 //     return j.nbGare();
-// }
+}
 
 void Plateau::jeu() {
-    while(!this->isGameOver()) {
-        for (Joueur& j : this->joueursActif) {
-            j.tourDeJeu();
-            this->affichage();
+    for (int i = 0; i < 39; i++ ) {
+        if (this->plateau[i] != nullptr) {
+            this->plateau[i]->affichage();
         }
     }
+    // while(!this->isGameOver()) {
+    //     for (Joueur& j : this->joueursActif) {
+    //         j.tourDeJeu();
+    //         this->affichage();
+    //     }
+    // }
 }
 
-void Plateau::removeJoueur(Joueur j) {
-    vector<Joueur>::iterator it;
-    it = find(this->joueursActifs.begin(), this->joueursActifs.end(), j);
-    if(it != this->joueursActifs.end()) {
-        this->joueursActifs.erase(it);
-        this->joueursInactifs.push_back(j);
-    } 
+void Plateau::removeJoueur(Joueur* j) {
+    // vector<Joueur>::iterator it;
+    // it = find(this->joueursActifs.begin(), this->joueursActifs.end(), j);
+    // if(it != this->joueursActifs.end()) {
+    //     this->joueursActifs.erase(it);
+    //     this->joueursInactifs.push_back(j);
+    // } 
 }
+
+
 
 // bool isGameOver() {
 //     if (this->joueursActifs.size() <= 1) {

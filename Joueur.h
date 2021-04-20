@@ -1,9 +1,9 @@
-#ifndef Joueur_h
-#define Joueur_h
+#pragma once
 
 #include "CaseAchetable.h"
-#include "Case.h"
+class CaseAchetable;
 #include "Plateau.h"
+class Plateau;
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
@@ -13,8 +13,8 @@ private:
     string nom;
     int id;
     int fortune;
-    Case position;
-    Plateau plat;
+    Case* position;
+    Plateau* plat;
     vector<CaseAchetable> vproprietes;
     
 public:
@@ -29,10 +29,9 @@ public:
     void tourDeJeu();
 
     // Constructeurs
-    Joueur(string nom, int id, Case position, Plateau plat);
+    Joueur(string nom, int id, Case* position, Plateau* plat);
 
     // Destructeur
     ~Joueur();
 };
 
-#endif /* Joueur_h */

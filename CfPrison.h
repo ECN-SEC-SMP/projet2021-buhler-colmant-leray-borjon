@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "CaseFixe.h"
+#include "Joueur.h"
 
 class CfPrison: public CaseFixe
 {

@@ -31,7 +31,7 @@ void Joueur::paiement(int somme, Joueur destinataire) {
   {
     destinataire.setFortune(destinataire.getFortune() + this->fortune);
     this->fortune -= somme;
-    plat.remove_player(this);
+    plat->removeJoueur(this);
   }
 }
 
@@ -48,13 +48,13 @@ void Joueur::addPropriete(CaseAchetable newPropriete) {
 //Jete le dé, change la position du joueur et affiche sa nouvelle position sous la forme "Le joueur Killian est en case 20(Gare du Nord)"
 void Joueur::tourDeJeu() {
     this -> position = this -> plat -> avance(this->position, lanceDe());
-    cout << "Le joueur" << this->nom << "est en case" << this->id << "(" << this->position << ")" << endl;
+    // cout << "Le joueur" << this->nom << "est en case" << this->id << "(" << this->position << ")" << endl;
 }
 
 
 
 //Constructeur
-Joueur::Joueur(string nom, int id, Case position, Plateau plat){
+Joueur::Joueur(string nom, int id, Case* position, Plateau* plat){
     this->nom=nom;
     this->id=id;
     this->fortune=100000;
