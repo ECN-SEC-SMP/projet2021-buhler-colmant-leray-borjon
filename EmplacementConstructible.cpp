@@ -12,6 +12,12 @@ EmplacementConstructible::EmplacementConstructible(int batiment, int coeffValori
   }
 }
 
+bat* creeBatListe(int montant){
+  bat* patrimoine;
+  patrimoine = new bat;
+  patrimoine->montant_bat=montant*;
+
+}
 int loyer(Case c){
   
 }

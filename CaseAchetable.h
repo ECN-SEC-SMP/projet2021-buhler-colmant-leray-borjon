@@ -14,7 +14,7 @@ class CaseAchetable: public Case {
   protected :
 
   public:
-    CaseAchetable():Case(int ID, string nom);
+    CaseAchetable()::CaseAchetable(int ID, string nom);
     void acheter(Joueur);
     void affichage();
     
