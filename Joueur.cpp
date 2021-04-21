@@ -51,7 +51,8 @@ void Joueur::addPropriete(CaseAchetable newPropriete) {
 
 //Jete le dé, change la position du joueur et affiche sa nouvelle position sous la forme "Le joueur Killian est en case 20(Gare du Nord)"
 void Joueur::tourDeJeu() {
-    this -> position = this -> plat -> avance(this->position, lanceDe());
+    cout << "ok" << endl;
+    this->position = this->plat->avance(this->position, lanceDe());
     // cout << "Le joueur" << this->nom << "est en case" << this->id << "(" << this->position << ")" << endl;
 }
 

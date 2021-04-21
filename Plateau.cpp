@@ -13,6 +13,7 @@ Plateau::Plateau() {
 
 }
 
+// Initialise les Cases et les Joueurs
 void Plateau::initPlateau() {
     // Ajout des gares
     this->plateau[5] = new Gare(5, "Gare Montparnasse");
@@ -74,10 +75,12 @@ void Plateau::initPlateau() {
     }
 }
 
+// Renvoie la Case n cases plus loin que celle donnée en paramètre
 Case* Plateau::avance(Case* c, int n) {
     return this->plateau[c->getID() + n];
 }
 
+// Affiche tout le plateau ainsi que la position des joueurs
 void Plateau::affichage() {
     for (int i = 0; i < 40; i++ ) {
         if (this->plateau[i] != nullptr) {
@@ -86,7 +89,7 @@ void Plateau::affichage() {
     }
     cout << endl << "Position des joeurs : " << endl << endl;
     for (Joueur& j : this->joueursActifs) {
-        cout << j.getNom() << " : " << j.getPosition()->getID() << endl;
+        cout << j.getNom() << " : " << j.getPosition()->getID() << ", fortune : " << j.getFortune() << endl;
     }
 }
 
@@ -94,16 +97,18 @@ void Plateau::affichage() {
 //     return j.nbGare();
 // }
 
+// Boucle principale du jeu
 void Plateau::jeu() {
     this->affichage();
-    // while(!this->isGameOver()) {
-    //     for (Joueur& j : this->joueursActif) {
-    //         j.tourDeJeu();
-    //         this->affichage();
-    //     }
-    // }
+    while(!this->isGameOver()) {
+        for (Joueur& j : this->joueursActifs) {
+            j.tourDeJeu();
+            this->affichage();
+        }
+    }
 }
 
+// Enlève un joueur des joueurs actifs
 void Plateau::removeJoueur(Joueur* j) {
     // vector<Joueur>::iterator it;
     // it = find(this->joueursActifs.begin(), this->joueursActifs.end(), j);
@@ -114,7 +119,7 @@ void Plateau::removeJoueur(Joueur* j) {
 }
 
 
-
+// Vérifie si la partie est finie
 bool Plateau::isGameOver() {
     if (this->joueursActifs.size() <= 1) {
         return true;
