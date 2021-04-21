@@ -30,11 +30,17 @@ CaseAchetable::CaseAchetable(int ID, string nom) : Case(ID, nom) {
 //}
 
 void CaseAchetable::affichage(){
+  int M;int H;
   cout<< "[" << this->ID << "] - " << this->nom << "(coût : " << this->prix << ")";
   if (proprio!=nullptr){
-    cout<< proprio->getNom() << endl;
+    cout<< proprio->getNom()<< endl;
   }
+  
   else {
     cout<< "- sans propriétaire" << endl;
   }
+}
+
+void CaseAchetable::setProprio(Joueur *j){
+  this->proprio=j;
 }

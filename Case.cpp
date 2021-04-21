@@ -13,3 +13,9 @@ Case::Case(int ID, string nom){
 int Case::getID() {
   return this->ID;
 }
+
+
+
+void Case::insererBatListe(int montant){}
+int Case::loyer(){}
+void Case::setProprio(Joueur *j){}
