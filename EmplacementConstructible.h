@@ -14,6 +14,7 @@ class EmplacementConstructible: public CaseAchetable
     int batiment;
     int coefValorisation;
     bat loy;
+
   protected:
 
   public:

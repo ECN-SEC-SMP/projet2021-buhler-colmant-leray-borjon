@@ -6,10 +6,11 @@ using namespace std;
 #include "CaseFixe.h"
 
 //constructeur
-CaseFixe::CaseFixe(){
-
-  }
+CaseFixe::CaseFixe(int ID, string nom) : Case(ID, nom) {
+    this->nom = nom;
+    this->ID = ID;
+}
 
 void CaseFixe::affichage(){
-    cout<< this->nom << endl;
-  }
+    cout<< "[" << this->ID << "] - " << this->nom << endl;
+}

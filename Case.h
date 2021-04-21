@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Case
 {
   private:
@@ -14,5 +16,5 @@ class Case
     //constructeurs
     Case(int ID, string nom);
     virtual void affichage()=0;
-
+    int getID();
 };

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "CaseFixe.h"
+#include "Joueur.h"
 
 class CfDepart: public CaseFixe
 {
@@ -11,7 +12,7 @@ class CfDepart: public CaseFixe
 
   public:
     //constructeurs
-    CfDepart():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+    CfDepart(int ID, string nom);
+    void action(Joueur joueur, int de);
 
 };

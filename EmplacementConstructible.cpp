@@ -6,10 +6,9 @@ using namespace std;
 #include "EmplacementConstructible.h"
 
 //constructeur
-EmplacementConstructible::EmplacementConstructible(int batiment, int coeffValorisation){
-    //this->batiment;
-    //this->coeffValorisation;
-  }
+EmplacementConstructible::EmplacementConstructible(int ID, string nom): CaseAchetable(ID, nom) {
+    this->ID = ID;
+    this->nom = nom;
 }
 
 bat* creeBatListe(int montant){
@@ -18,6 +17,6 @@ bat* creeBatListe(int montant){
   patrimoine->montant_bat=montant*;
 
 }
-int loyer(Case c){
+// int loyer(Case c){
   
-}
+// }

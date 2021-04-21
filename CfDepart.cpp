@@ -7,8 +7,7 @@ using namespace std;
 #include "CfDepart.h"
 
 //constructeur
-CfDepart::CfDepart(int ID, string nom){
-    //this->ID;
-    //this->nom;
-  }
+CfDepart::CfDepart(int ID, string nom) : CaseFixe(ID, nom) {
+    this->ID;
+    this->nom;
 }

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "CaseFixe.h"
+#include "Joueur.h"
 
 class CfChance: public CaseFixe
 {
@@ -11,7 +12,7 @@ class CfChance: public CaseFixe
 
   public:
     //constructeurs
-    CfChance():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+    CfChance(int ID, string nom);
+    void action(Joueur joueur, int de);
 
 };
