@@ -1,5 +1,4 @@
-#ifndef Joueur_h
-#define Joueur_h
+#pragma once
 
 #include "CaseAchetable.h"
 #include "Case.h"
