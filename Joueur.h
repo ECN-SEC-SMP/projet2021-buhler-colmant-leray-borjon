@@ -1,5 +1,12 @@
 #pragma once
 
+<<<<<<< HEAD
+=======
+#include "CaseAchetable.h"
+class CaseAchetable;
+#include "Plateau.h"
+class Plateau;
+>>>>>>> origin/case
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
@@ -14,8 +21,8 @@ private:
     string nom;
     int id;
     int fortune;
-    Case position;
-    Plateau plat;
+    Case* position;
+    Plateau* plat;
     vector<CaseAchetable> vproprietes;
     int nbJPrison;
     
@@ -23,6 +30,7 @@ public:
     string getNom() const;
     int getId() const;
     int getFortune() const;
+    Case* getPosition() const;
     void setFortune(int fortune);
     void setPosition(Case case);
     int Joueur::getnbJPrison();
@@ -38,10 +46,9 @@ void Joueur::setnbJPrison(int nbJPrison) {
 
 
     // Constructeurs
-    Joueur(string nom, int id, Case position, Plateau plat);
+    Joueur(string nom, int id, Case* position, Plateau* plat);
 
     // Destructeur
     ~Joueur();
 };
 
-#endif /* Joueur_h */

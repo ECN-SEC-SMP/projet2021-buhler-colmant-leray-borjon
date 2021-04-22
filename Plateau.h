@@ -1,15 +1,22 @@
 #pragma once
 
 #include <stdlib.h>
+#include <vector>
 #include "Joueur.h"
+<<<<<<< HEAD
 #include "Gare.h"
 #include "EmplacementConstructible.h"
+=======
+class Joueur;
+#include "Case.h"
+>>>>>>> origin/case
+
 
 using namespace std;
 
 class Plateau {
     private:
-        vector<Case> plateau[40];
+        Case* plateau[40];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 
@@ -20,10 +27,10 @@ class Plateau {
 
         void initPlateau();
         void affichage();
-        Case avance(Case c, int d);
+        Case* avance(Case* c, int d);
         void finDePartie();
         int nbGares(Joueur j);
         void jeu();
-        void removeJoueur(Joueur j);
-        boolean isGameOver();
+        void removeJoueur(Joueur* j);
+        bool isGameOver();
 };

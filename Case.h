@@ -1,6 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include "Joueur.h"
+class Joueur;
+using namespace std;
 
 #include "Case.h"
 #include "Joueur.h"
@@ -17,6 +20,14 @@ class Case
   public:
     //constructeurs
     Case(int ID, string nom);
+<<<<<<< HEAD
     action(Joueur joueur, Plateau plateau, int d);
 
+=======
+    virtual void affichage()=0;
+    int getID();
+    void insererBatListe(int montant);
+    int loyer();
+    void setProprio(Joueur *j);
+>>>>>>> origin/case
 };

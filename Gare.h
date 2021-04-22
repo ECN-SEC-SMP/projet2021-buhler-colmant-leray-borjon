@@ -3,7 +3,7 @@
 #include <iostream>
 #include "CaseAchetable.h"
 
-class EmplacementConstructible: public CaseAchetable
+class Gare: public CaseAchetable
 {
   private:
 
@@ -11,7 +11,7 @@ class EmplacementConstructible: public CaseAchetable
 
   public:
     //constructeurs
-    EmplacementConstructible():CaseAchetable(int ID, string nom);
-    action(Joueur joueur, int de);
+    Gare(int ID, string nom);
+    void action(Joueur joueur, int de);
 
 };
