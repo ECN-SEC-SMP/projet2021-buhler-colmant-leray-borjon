@@ -9,14 +9,15 @@ CaseAchetable::CaseAchetable(int ID, string nom) : Case(ID, nom) {
   this->ID = ID;
 }
 
-<<<<<<< HEAD
 void CaseAchetable::action(Joueur &j, Plateau &plateau, int d){
   // achetable ?
   // paiement ?? fortune assez élevée ?
   // si oui -> addPropriete(CaseAchetable position)
   if (proprio!=NULL){
     j.paiement (loyer(),&proprio);
-=======
+  }
+}
+
 // void CaseAchetable::action(Joueur &j, int d){
 //   // achetable ?
 //   // paiement ?? fortune assez élevée ?
@@ -32,17 +33,11 @@ void CaseAchetable::action(Joueur &j, Plateau &plateau, int d){
 //   // }
 // }
 
-
-// void CaseAchetable::acheter(){
-
-//}
-
 void CaseAchetable::affichage(){
   int M;int H;
   cout<< "[" << this->ID << "] - " << this->nom << "(coût : " << this->prix << ")";
   if (proprio!=nullptr){
     cout<< proprio->getNom()<< endl;
->>>>>>> origin/case
   }
   
   else {

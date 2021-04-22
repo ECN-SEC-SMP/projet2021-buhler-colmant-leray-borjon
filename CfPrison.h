@@ -11,12 +11,7 @@ class CfPrison: public CaseFixe
 
   public:
     //constructeurs
-<<<<<<< HEAD
     CfPrison():CaseFixe(int ID, string nom);
-    action(Joueur joueur, Plateau plateau, int d);
-=======
-    CfPrison(int ID, string nom);
-    void action(Joueur joueur, int de);
->>>>>>> origin/case
+    void action(Joueur joueur, Plateau plateau, int d);
 
 };

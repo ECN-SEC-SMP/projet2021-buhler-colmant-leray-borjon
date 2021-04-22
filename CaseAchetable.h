@@ -18,14 +18,9 @@ class CaseAchetable: public Case
   public:
 <<<<<<< HEAD
     CaseAchetable():Case(int ID, string nom);
-    acheter(Joueur);
-    action(Joueur &j, Plateau &plateau, int d);
-
-=======
-    CaseAchetable(int ID, string nom);
-    void acheter(Joueur j);
-    void affichage();
->>>>>>> origin/case
     
+    void acheter(Joueur joueur);
+    void action(Joueur &j, Plateau &plateau, int d);
+    void affichage();
     void setProprio(Joueur *j);
 };

@@ -1,12 +1,8 @@
 #pragma once
 
-<<<<<<< HEAD
-=======
-#include "CaseAchetable.h"
 class CaseAchetable;
-#include "Plateau.h"
 class Plateau;
->>>>>>> origin/case
+
 #include <stdlib.h>
 #include <iostream>
 #include <vector>

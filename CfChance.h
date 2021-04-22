@@ -13,12 +13,7 @@ class CfChance: public CaseFixe
 
   public:
     //constructeurs
-<<<<<<< HEAD
     CfChance():CaseFixe(int ID, string nom);
-    action(Joueur joueur, Plateau plateau, int d);
-=======
-    CfChance(int ID, string nom);
-    void action(Joueur joueur, int de);
->>>>>>> origin/case
+    void action(Joueur joueur, Plateau plateau, int d);
 
 };

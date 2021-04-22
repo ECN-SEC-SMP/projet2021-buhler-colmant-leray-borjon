@@ -10,14 +10,10 @@ CaseFixe::CaseFixe(int ID, string nom) : Case(ID, nom) {
     this->ID = ID;
 }
 
-<<<<<<< HEAD
-}
-
 void CaseFixe::action(Joueur &j, Plateau &plateau, int d){
 
 }
-=======
+
 void CaseFixe::affichage(){
     cout<< "[" << this->ID << "] - " << this->nom << endl;
 }
->>>>>>> origin/case

@@ -2,14 +2,12 @@
 
 #include <stdlib.h>
 #include <vector>
+class Joueur;
+
 #include "Joueur.h"
-<<<<<<< HEAD
 #include "Gare.h"
 #include "EmplacementConstructible.h"
-=======
-class Joueur;
 #include "Case.h"
->>>>>>> origin/case
 
 
 using namespace std;

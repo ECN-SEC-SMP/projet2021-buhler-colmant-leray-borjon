@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-=======
-#include "Plateau.h"
+#include <iostream>
 #include "Gare.h"
 #include "CfDepart.h"
 #include "CfPrison.h"
 #include "CfAllerPrison.h"
 #include "CfChance.h"
 #include "EmplacementConstructible.h"
->>>>>>> origin/case
-#include <iostream>
-
 #include "Plateau.h"
 
 using namespace std;
