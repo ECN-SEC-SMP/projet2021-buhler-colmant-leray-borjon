@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Case.h"
+
 #include "CaseAchetable.h"
 
 CaseAchetable::CaseAchetable(){
@@ -7,7 +7,7 @@ CaseAchetable::CaseAchetable(){
 
 }
 
-void CaseAchetable::action(Joueur &j, int d){
+void CaseAchetable::action(Joueur &j, Plateau &plateau, int d){
   // achetable ?
   // paiement ?? fortune assez élevée ?
   // si oui -> addPropriete(CaseAchetable position)

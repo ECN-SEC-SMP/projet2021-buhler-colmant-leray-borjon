@@ -3,6 +3,7 @@
 #include <iostream>
 #include "CaseFixe.h"
 
+
 class CfChance: public CaseFixe
 {
   private:
@@ -12,6 +13,6 @@ class CfChance: public CaseFixe
   public:
     //constructeurs
     CfChance():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+    action(Joueur joueur, Plateau plateau, int d);
 
 };

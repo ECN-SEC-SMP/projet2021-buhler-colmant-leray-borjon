@@ -2,8 +2,6 @@
 #include <stdlib.h>
 using namespace std;
 
-#include "Case.h"
-#include "CaseFixe.h"
 #include "CfChance.h"
 
 //constructeur
@@ -11,3 +9,7 @@ CfChance::CfChance(){
 
   }
 }
+
+void CfChance::action(Joueur joueur, Plateau plateau, int d){
+  cout << "Le joueur " + joueur->nom + " est vraiment très chanceux !" << endl;
+} 

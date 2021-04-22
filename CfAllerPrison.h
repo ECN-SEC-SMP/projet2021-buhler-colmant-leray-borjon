@@ -1,7 +1,9 @@
 #pragma once
 
 #include <iostream>
+
 #include "CaseFixe.h"
+#include "CfAllerPrison.h"
 
 class CfAllerPrison: public CaseFixe
 {
@@ -12,6 +14,8 @@ class CfAllerPrison: public CaseFixe
   public:
     //constructeurs
     CfAllerPrison():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+
+    //fonctions
+    void action(Joueur joueur, Plateau plateau, int d)
 
 };

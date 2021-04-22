@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <iostream>
+
 #include "Case.h"
 
 class CaseAchetable: public Case {
@@ -13,6 +14,8 @@ class CaseAchetable: public Case {
 
   public:
     CaseAchetable():Case(int ID, string nom);
-    void acheter(Joueur)
+    acheter(Joueur);
+    action(Joueur &j, Plateau &plateau, int d);
+
     
 };

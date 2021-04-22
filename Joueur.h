@@ -1,12 +1,13 @@
-#ifndef Joueur_h
-#define Joueur_h
+#pragma once
 
-#include "CaseAchetable.h"
-#include "Case.h"
-#include "Plateau.h"
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+
+#include "CaseAchetable.h"
+#include "CaseFixe.h"
+#include "Plateau.h"
+#include "Joueur.h"
 
 class Joueur {
 private:
@@ -16,17 +17,25 @@ private:
     Case position;
     Plateau plat;
     vector<CaseAchetable> vproprietes;
+    int nbJPrison;
     
 public:
     string getNom() const;
     int getId() const;
     int getFortune() const;
     void setFortune(int fortune);
+    void setPosition(Case case);
+    int Joueur::getnbJPrison();
+    void Joueur::setnbJPrison(int nbJPrison);
+}
+
+void Joueur::setnbJPrison(int nbJPrison) {
 
     int lanceDe();
     void addPropriete(CaseAchetable newPropriete);
     void paiement(int somme, Joueur destinataire);
     void tourDeJeu();
+
 
     // Constructeurs
     Joueur(string nom, int id, Case position, Plateau plat);

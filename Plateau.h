@@ -2,7 +2,8 @@
 
 #include <stdlib.h>
 #include "Joueur.h"
-#include "Case.h"
+#include "Gare.h"
+#include "EmplacementConstructible.h"
 
 using namespace std;
 
@@ -14,6 +15,8 @@ class Plateau {
 
     public:
         Plateau();
+
+        Case getCase(int case);
 
         void initPlateau();
         void affichage();

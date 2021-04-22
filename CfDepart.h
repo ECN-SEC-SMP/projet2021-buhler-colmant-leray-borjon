@@ -12,6 +12,8 @@ class CfDepart: public CaseFixe
   public:
     //constructeurs
     CfDepart():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+    action(Joueur joueur, Plateau plateau, int d);
+
+    plus2000(Joueur joueur);
 
 };

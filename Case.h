@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+#include "Case.h"
+#include "Joueur.h"
+#include "Plateau.h"
+
 class Case
 {
   private:
@@ -13,5 +17,6 @@ class Case
   public:
     //constructeurs
     Case(int ID, string nom);
+    action(Joueur joueur, Plateau plateau, int d);
 
 };

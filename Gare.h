@@ -6,8 +6,6 @@
 class EmplacementConstructible: public CaseAchetable
 {
   private:
-    int batiment;
-    int coefValorisation;
 
   protected:
 

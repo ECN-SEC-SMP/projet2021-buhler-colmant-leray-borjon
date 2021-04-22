@@ -2,7 +2,6 @@
 #include <stdlib.h>
 using namespace std;
 
-#include "CaseAchetable.h"
 #include "EmplacementConstructible.h"
 
 //constructeur

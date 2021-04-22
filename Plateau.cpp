@@ -1,12 +1,15 @@
-#include "Plateau.h"
-#include "Gare.h"
-#include "EmplacementConstructible.h"
 #include <iostream>
+
+#include "Plateau.h"
 
 using namespace std;
 
 Plateau::Plateau() {
 
+}
+
+Case getCase(int case){
+  return this->plateau[case];
 }
 
 void Plateau::initPlateau() {

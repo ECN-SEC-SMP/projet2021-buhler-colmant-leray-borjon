@@ -13,6 +13,6 @@ class CfPrison: public CaseFixe
   public:
     //constructeurs
     CfPrison():CaseFixe(int ID, string nom);
-    action(Joueur joueur, int de);
+    action(Joueur joueur, Plateau plateau, int d);
 
 };
