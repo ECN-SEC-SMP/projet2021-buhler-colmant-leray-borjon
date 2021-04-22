@@ -8,6 +8,10 @@ using namespace std;
 Case::Case(int ID, string nom){
     this->ID;
     this->nom;
+  }
+
+void Case::action(Joueur* joueur, Plateau* plateau, int d) {
+
 }
 
 int Case::getID() {

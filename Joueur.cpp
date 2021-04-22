@@ -1,7 +1,7 @@
-#include "Joueur.h"
 #include <stdlib.h>
 #include <iostream>
 
+#include "Joueur.h"
 
 using namespace std;
 
@@ -25,15 +25,27 @@ void Joueur::setFortune(int fortune) {
     this->fortune = fortune;
 }
 
+void Joueur::setPosition(Case* position) {
+  this->position = position;
+}
+
+int Joueur::getnbJPrison() const {
+    return this->nbJPrison;
+}
+
+void Joueur::setnbJPrison(int nbJPrison) {
+    this->nbJPrison = nbJPrison;
+}
+
 //Si le joueur a assez d'argent pour payer, il paye le joueur destinataire. Sinon, il donne le reste de sa fortune au joueur destinataire et est éliminé.
-void Joueur::paiement(int somme, Joueur destinataire) {
+void Joueur::paiement(int somme, Joueur* destinataire) {
   if(somme < this->fortune){
-    destinataire.setFortune(destinataire.getFortune() + somme);
+    destinataire->setFortune(destinataire->getFortune() + somme);
     this->fortune -= somme;
   }
   else
   {
-    destinataire.setFortune(destinataire.getFortune() + this->fortune);
+    destinataire->setFortune(destinataire->getFortune() + this->fortune);
     this->fortune -= somme;
     plat->removeJoueur(this);
   }

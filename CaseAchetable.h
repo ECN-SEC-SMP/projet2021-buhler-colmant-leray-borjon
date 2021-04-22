@@ -2,9 +2,11 @@
 
 #include <stdlib.h>
 #include <iostream>
+
 #include "Case.h"
 #include "Joueur.h"
 class Joueur;
+class Plateau;
 
 class CaseAchetable: public Case {
   private:
@@ -15,8 +17,9 @@ class CaseAchetable: public Case {
 
   public:
     CaseAchetable(int ID, string nom);
-    void acheter(Joueur j);
-    void affichage();
     
-    void setProprio(Joueur* j);
+    void acheter(Joueur joueur);
+    void action(Joueur* j, Plateau* plateau, int d);
+    void affichage();
+    void setProprio(Joueur *j);
 };

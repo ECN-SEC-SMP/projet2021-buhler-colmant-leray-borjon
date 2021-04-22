@@ -1,3 +1,7 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
 #include "Gare.h"
 
 Gare::Gare(int ID, string nom) : CaseAchetable(ID, nom) {

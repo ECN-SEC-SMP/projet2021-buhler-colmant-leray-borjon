@@ -12,6 +12,6 @@ class CfPrison: public CaseFixe
   public:
     //constructeurs
     CfPrison(int ID, string nom);
-    void action(Joueur joueur, int de);
+    void action(Joueur* joueur, Plateau* plateau, int d);
 
 };

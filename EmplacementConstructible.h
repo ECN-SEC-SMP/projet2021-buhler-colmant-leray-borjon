@@ -3,16 +3,18 @@
 /*struct bat {
   int montant_bat;
   bat *suivant;
-}*/
+};*/
 
 #include <iostream>
 #include "CaseAchetable.h"
+#include <vector>
 
 class EmplacementConstructible: public CaseAchetable
 {
   private:
     int batiment;
     int coefValorisation;
+    //bat loy;
     vector <int> bat;
 
   protected:
@@ -21,8 +23,10 @@ class EmplacementConstructible: public CaseAchetable
     //constructeurs
     EmplacementConstructible(int ID, string nom);
     EmplacementConstructible(int ID, string nom, int coefValorisation);
-    void action(Joueur joueur, int de);
+    //bat* EmplacementConstructible::creeBatListe(int montant);
     void insererBatListe(int montant);
     int loyer();
+    //void action(Joueur* joueur, Plateau* plat, int de);
     void affichage();
+
 };

@@ -6,7 +6,7 @@ using namespace std;
 #include "CaseAchetable.h"
 #include "EmplacementConstructible.h"
 
-//constructeur
+//constructeurs
 EmplacementConstructible::EmplacementConstructible(int ID, string nom): CaseAchetable(ID, nom) {
     this->ID = ID;
     this->nom = nom;
@@ -18,13 +18,20 @@ EmplacementConstructible::EmplacementConstructible(int ID, string nom, int coefV
     this->coefValorisation=coefValorisation;
 }
 
+/*bat* EmplacementConstructible::creeBatListe(int montant){
+  bat* patrimoine;
+  patrimoine = new bat;
+  patrimoine->montant_bat=montant*this->coefValorisation;
+  return patrimoine;
+}*/
+
 void EmplacementConstructible::insererBatListe(int montant){
-    bat.push_back(montant);
+    this->bat.push_back(montant);
+
 }
 
-
 int EmplacementConstructible::loyer(){
-    return this->coefValorisation*accumulate(bat.begin(),bat.end(),0);
+  return this->coefValorisation*accumulate(bat.begin(),bat.end(),0);
   /*int somme;
   for(vector<int>::iterator it=bat.begin(); it != bat.end();it++){
     cout<<*it<< " "<<endl;
@@ -49,7 +56,7 @@ void EmplacementConstructible::affichage(){
     cout << this->loyer() << "maison(s)="<< M << "hotel(s)=" << H << endl;
   }
     else {
-    cout<< "- sans propriétaire" << endl;
+    cout<< " - sans propriétaire" << endl;
   }
 }
 

@@ -2,9 +2,11 @@
 
 #include <stdlib.h>
 #include <vector>
+
 #include "Joueur.h"
 class Joueur;
 #include "Case.h"
+class Case;
 
 
 using namespace std;
@@ -17,6 +19,8 @@ class Plateau {
 
     public:
         Plateau();
+
+        Case* getCase(int c);
 
         void initPlateau();
         void affichage();

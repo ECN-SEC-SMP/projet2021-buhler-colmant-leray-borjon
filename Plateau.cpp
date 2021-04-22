@@ -1,11 +1,11 @@
-#include "Plateau.h"
+#include <iostream>
 #include "Gare.h"
 #include "CfDepart.h"
 #include "CfPrison.h"
 #include "CfAllerPrison.h"
 #include "CfChance.h"
 #include "EmplacementConstructible.h"
-#include <iostream>
+#include "Plateau.h"
 
 using namespace std;
 
@@ -13,7 +13,10 @@ Plateau::Plateau() {
 
 }
 
-// Initialise les Cases et les Joueurs
+Case* Plateau::getCase(int c){
+  return this->plateau[c];
+}
+
 void Plateau::initPlateau() {
     // Ajout des gares
     this->plateau[5] = new Gare(5, "Gare Montparnasse");
@@ -39,9 +42,10 @@ void Plateau::initPlateau() {
     this->plateau[36] = new CfChance(36, "Case chance");
     this->plateau[38] = new CfChance(38, "Case chance");
 
-    // Ajout des rues   
-    this->plateau[1] = new EmplacementConstructible(1, "Boulevard de Belleville");
+    // Ajout des rues  
+    this->plateau[1] = new EmplacementConstructible(1, "Boulevard de Belleville",2);
     this->plateau[1]->insererBatListe(100);
+    
     this->plateau[3] = new EmplacementConstructible(3, "Rue Lecourbe");
     this->plateau[6] = new EmplacementConstructible(6, "Rue de Vaugirard");
     this->plateau[8] = new EmplacementConstructible(8, "Rue de Courcelles");
@@ -73,6 +77,7 @@ void Plateau::initPlateau() {
     for (int i = 1; i <= nbJoueurs ; i++) {
         cin >> nomJoueur;
         this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], this));
+        
     }
     this->plateau[1]->setProprio(&this->joueursActifs[1]);
 }
@@ -89,7 +94,7 @@ void Plateau::affichage() {
             this->plateau[i]->affichage();
         }
     }
-    cout << endl << "Position des joeurs : " << endl << endl;
+    cout << endl << "Position des joueurs : " << endl << endl;
     for (Joueur& j : this->joueursActifs) {
         cout << j.getNom() << " : " << j.getPosition()->getID() << ", fortune : " << j.getFortune() << endl;
     }
