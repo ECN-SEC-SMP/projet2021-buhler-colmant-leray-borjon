@@ -3,25 +3,30 @@
 #include <stdlib.h>
 #include <vector>
 #include "Joueur.h"
+class Joueur;
 #include "Case.h"
+class Case;
+
 
 using namespace std;
 
 class Plateau {
     private:
-        vector<Case> plateau[39];
+        Case* plateau[40];
         vector<Joueur> joueursActifs;
         vector<Joueur> joueursInactifs;
 
     public:
         Plateau();
 
+        Case* getCase(int c);
+
         void initPlateau();
         void affichage();
-        Case avance(Case c, int d);
+        Case* avance(Case* c, int d);
         void finDePartie();
         int nbGares(Joueur j);
         void jeu();
-        void removeJoueur(Joueur j);
+        void removeJoueur(Joueur* j);
         bool isGameOver();
 };

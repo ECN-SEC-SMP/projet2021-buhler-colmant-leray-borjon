@@ -11,6 +11,9 @@ class CaseFixe: public Case
 
   public:
     //constructeurs
-    CaseFixe():Case(int ID, string nom);
+    CaseFixe(int ID, string nom);
+    
+    void action(Joueur* j, Plateau* plateau, int d);
+    void affichage();
 
 };

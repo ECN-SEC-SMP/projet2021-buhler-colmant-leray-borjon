@@ -2,17 +2,22 @@
 
 #include <stdlib.h>
 #include <iostream>
+
 #include "Case.h"
-#include "Joueur.h"
+class Joueur;
+class Plateau;
 
 class CaseAchetable: public Case {
   private:
-    Joueur *proprio;
+
+  protected :
+    Joueur* proprio;
     int prix;    
 
-
   public:
-    CaseAchetable():Case(int ID, string nom);
-//    void acheter(Joueur j);
+    CaseAchetable(int ID, string nom);
     
+    void action(Joueur* j, Plateau* plateau, int d) override;
+    void affichage();
+    void acheter(Joueur *j);
 };
