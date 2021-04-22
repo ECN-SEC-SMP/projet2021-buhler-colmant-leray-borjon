@@ -38,3 +38,9 @@ void CaseAchetable::affichage(){
     cout<< "- sans propriétaire" << endl;
   }
 }
+
+void CaseAchetable::setProprio(Joueur* j){
+    this->proprio=j;
+    cout << "ok" << endl << endl;
+    cout << this->proprio->getNom() << endl;
+}

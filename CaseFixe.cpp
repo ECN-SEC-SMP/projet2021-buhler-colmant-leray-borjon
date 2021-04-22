@@ -14,3 +14,4 @@ CaseFixe::CaseFixe(int ID, string nom) : Case(ID, nom) {
 void CaseFixe::affichage(){
     cout<< "[" << this->ID << "] - " << this->nom << endl;
 }
+

@@ -41,6 +41,7 @@ void Plateau::initPlateau() {
 
     // Ajout des rues   
     this->plateau[1] = new EmplacementConstructible(1, "Boulevard de Belleville");
+    this->plateau[1]->insererBatListe(100);
     this->plateau[3] = new EmplacementConstructible(3, "Rue Lecourbe");
     this->plateau[6] = new EmplacementConstructible(6, "Rue de Vaugirard");
     this->plateau[8] = new EmplacementConstructible(8, "Rue de Courcelles");
@@ -73,6 +74,7 @@ void Plateau::initPlateau() {
         cin >> nomJoueur;
         this->joueursActifs.push_back(Joueur(nomJoueur, i, this->plateau[0], this));
     }
+    this->plateau[1]->setProprio(&this->joueursActifs[1]);
 }
 
 // Renvoie la Case n cases plus loin que celle donnée en paramètre
@@ -100,12 +102,12 @@ void Plateau::affichage() {
 // Boucle principale du jeu
 void Plateau::jeu() {
     this->affichage();
-    while(!this->isGameOver()) {
-        for (Joueur& j : this->joueursActifs) {
-            j.tourDeJeu();
-            this->affichage();
-        }
-    }
+    // while(!this->isGameOver()) {
+    //     for (Joueur& j : this->joueursActifs) {
+    //         j.tourDeJeu();
+    //         this->affichage();
+    //     }
+    // }
 }
 
 // Enlève un joueur des joueurs actifs
