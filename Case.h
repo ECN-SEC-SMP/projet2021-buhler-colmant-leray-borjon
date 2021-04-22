@@ -17,4 +17,5 @@ class Case
     Case(int ID, string nom);
     virtual void affichage()=0;
     int getID();
+    void action();
 };

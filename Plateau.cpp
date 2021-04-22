@@ -75,7 +75,7 @@ void Plateau::initPlateau() {
 }
 
 Case* Plateau::avance(Case* c, int n) {
-    return this->plateau[c->getID() + n];
+    return this->plateau[(c->getID() + n)%39];
 }
 
 void Plateau::affichage() {
@@ -84,10 +84,11 @@ void Plateau::affichage() {
             this->plateau[i]->affichage();
         }
     }
-    cout << endl << "Position des joeurs : " << endl << endl;
+    cout << endl << "Position des joueurs : " << endl << endl;
     for (Joueur& j : this->joueursActifs) {
         cout << j.getNom() << " : " << j.getPosition()->getID() << endl;
     }
+
 }
 
 // int Plateau::nbGare(Joueur j) {
@@ -96,12 +97,12 @@ void Plateau::affichage() {
 
 void Plateau::jeu() {
     this->affichage();
-    // while(!this->isGameOver()) {
-    //     for (Joueur& j : this->joueursActif) {
-    //         j.tourDeJeu();
-    //         this->affichage();
-    //     }
-    // }
+    while(!this->isGameOver()) {
+        for (Joueur& j : this->joueursActifs) {
+            j.tourDeJeu();
+            this->affichage();
+        }
+    }
 }
 
 void Plateau::removeJoueur(Joueur* j) {

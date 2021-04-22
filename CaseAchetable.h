@@ -17,5 +17,6 @@ class CaseAchetable: public Case {
     CaseAchetable(int ID, string nom);
     void acheter(Joueur j);
     void affichage();
+    void action(Joueur &j, int d);
     
 };

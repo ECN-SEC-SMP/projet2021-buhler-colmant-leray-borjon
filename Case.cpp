@@ -6,10 +6,14 @@ using namespace std;
 
 //constructeur
 Case::Case(int ID, string nom){
-    this->ID;
-    this->nom;
+    this->ID=ID;
+    this->nom=nom;
 }
 
 int Case::getID() {
   return this->ID;
+}
+
+void Case::action(){
+
 }

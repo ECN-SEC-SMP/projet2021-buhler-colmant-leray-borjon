@@ -25,7 +25,7 @@ public:
     void setFortune(int fortune);
 
     int lanceDe();
-    void addPropriete(CaseAchetable newPropriete);
+    void addPropriete(Case *newPropriete);
     void paiement(int somme, Joueur destinataire);
     void tourDeJeu();
 
