@@ -16,7 +16,7 @@ Case::Case(int ID, string nom){
   }
 
 void Case::action(Joueur* joueur, Plateau* plateau, int d) {
-  cout << "ok" << endl;
+  //cout << "ok" << endl;
 }
 
 int Case::getID() {

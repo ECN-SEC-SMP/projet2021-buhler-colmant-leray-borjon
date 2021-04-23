@@ -91,6 +91,9 @@ Case* Plateau::avance(Case* c, int n) {
 
 // Affiche tout le plateau ainsi que la position des joueurs
 void Plateau::affichage() {
+    cout <<endl;
+    cout << endl;
+    cout << endl;
     for (int i = 0; i < 40; i++ ) {
         if (this->plateau[i] != nullptr) {
             this->plateau[i]->affichage();

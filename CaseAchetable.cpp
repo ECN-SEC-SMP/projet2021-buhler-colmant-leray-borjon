@@ -5,6 +5,11 @@
 #include "CaseAchetable.h"
 using namespace std;
 
+
+int CaseAchetable::getPrix() const {
+    return this->prix;
+}
+
 CaseAchetable::CaseAchetable(int ID, string nom) : Case(ID, nom) {
   this->proprio = nullptr;
   this->nom = nom;
@@ -16,10 +21,10 @@ void CaseAchetable::action(Joueur* j, Plateau* plateau, int d){
   // achetable ?
   // paiement ?? fortune assez élevée ?
   // si oui -> addPropriete(CaseAchetable position)
-  cout << "ok" << endl;
-  if (this->proprio!=NULL){
-    j->paiement(this->loyer(),this->proprio);
-  }
+  cout << "okayyy" << endl;
+  // if (this->proprio!=NULL){
+  //   j->paiement(this->loyer(),this->proprio);
+  // }
 }
 
 // void CaseAchetable::action(Joueur &j, int d){

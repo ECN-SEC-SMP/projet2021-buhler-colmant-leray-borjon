@@ -30,7 +30,7 @@ public:
     void setnbJPrison(int nbJPrison);
 
     int lanceDe();
-    void addPropriete(CaseAchetable newPropriete);
+    void addPropriete(CaseAchetable* newPropriete);
     void paiement(int somme, Joueur* destinataire);
     void tourDeJeu();
 

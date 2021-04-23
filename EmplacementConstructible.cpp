@@ -42,9 +42,9 @@ int EmplacementConstructible::loyer(){
 void EmplacementConstructible::affichage(){
   int M=0;
   int H=0;
-  cout<< "[" << this->ID << "] - " << this->nom << "(coût : " << this->prix << ")";
+  cout<< "[" << this->ID << "] - " << this->nom << " (coût : " << this->prix << ") ";
   if (this->proprio!=nullptr){
-    cout<< this->proprio->getNom();
+    cout<< "[Propriétaire:" << this->proprio->getNom();
     for(vector<int>::iterator it=bat.begin(); it != bat.end();it++){
       if (*it==100){
         M++;
@@ -54,7 +54,7 @@ void EmplacementConstructible::affichage(){
         H++;
       }
     }
-    cout << this->loyer() << "maison(s)="<< M << "hotel(s)=" << H << endl;
+    cout << " | Loyer:" << this->loyer() << " | Maison(s):"<< M << " | Hotel(s):" << H << "]" << endl;
   }
     else {
     cout<< " - sans propriétaire" << endl;
@@ -63,9 +63,16 @@ void EmplacementConstructible::affichage(){
 
 void EmplacementConstructible::action(Joueur* joueur, Plateau* plat, int de) {
     // Si dé impair et pas de proprio on achète
-        cout << "ok" << endl;
     if (de%2 == 1 && !(this->proprio != nullptr)) {
-        this->acheter(joueur);
+      if(joueur->getFortune() > this->prix){
+        this->proprio = joueur;   //le propriétaire devient le joueur passé en paramètre
+        joueur->addPropriete(this); //ajoute une propriété au joueur
+        joueur->setFortune(joueur->getFortune() - this->prix);  //décremente fortune du joueur par rapport au prix d'achat de l'emplacement
+        cout << "Le joueur " << joueur->getNom() << " vient d'acquérir la case " << this->nom << endl;
+      }
+      else cout << "Le joueur " << joueur->getNom() << "ne possède pas assez d'argent pour acheter la propriété" << endl; 
+
     }
+
 }
 
