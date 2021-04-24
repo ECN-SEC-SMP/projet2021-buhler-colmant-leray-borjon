@@ -12,8 +12,10 @@ class CfChance: public CaseFixe
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     CfChance(int ID, string nom);
+    ~CfChance();
+
     void action(Joueur* joueur, Plateau* plateau, int d);
 
 };

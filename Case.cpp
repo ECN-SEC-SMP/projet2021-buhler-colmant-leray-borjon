@@ -5,22 +5,23 @@ using namespace std;
 #include "Case.h"
 #include "Joueur.h"
 
-string Case::getNom() const {
-    return nom;
-}
-
-//constructeur
+//Constructeur
 Case::Case(int ID, string nom){
     this->ID = ID;
     this->nom = nom;
-  }
-
-void Case::action(Joueur* joueur, Plateau* plateau, int d) {
-  //cout << "ok" << endl;
 }
 
+Case::~Case() {
+    //nothing to do
+}
+
+//Getter/Setter
 int Case::getID() {
   return this->ID;
+}
+
+string Case::getNom() const {
+    return nom;
 }
 
 void Case::insererBatListe(int montant){}

@@ -14,18 +14,18 @@ class EmplacementConstructible: public CaseAchetable
   private:
     int batiment;
     int coefValorisation;
-    //bat loy;
     vector <int> bat;
 
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     EmplacementConstructible(int ID, string nom);
     EmplacementConstructible(int ID, string nom, int coefValorisation);
-    //bat* EmplacementConstructible::creeBatListe(int montant);
+
     void insererBatListe(int montant);
     int loyer();
+    void achete(Joueur* joueur, int de);
     void action(Joueur* joueur, Plateau* plat, int de) override;
     void affichage();
 

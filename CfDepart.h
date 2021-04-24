@@ -11,7 +11,9 @@ class CfDepart: public CaseFixe
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     CfDepart(int ID, string nom);
+    ~CfDepart();
+
     void action(Joueur* joueur, Plateau* plateau, int d);
 };

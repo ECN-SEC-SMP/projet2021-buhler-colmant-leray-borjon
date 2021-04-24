@@ -17,7 +17,9 @@ class Plateau {
         vector<Joueur> joueursInactifs;
 
     public:
+    //Constructeur
         Plateau();
+        ~Plateau();
 
         Case* getCase(int c);
 

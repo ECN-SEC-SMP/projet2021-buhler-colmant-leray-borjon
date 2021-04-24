@@ -6,11 +6,18 @@ using namespace std;
 #include "CaseFixe.h"
 #include "CfPrison.h"
 
-//constructeur
+//Constructeur
 CfPrison::CfPrison(int ID, string nom): CaseFixe(ID, nom) {
   this->nom = nom;
   this->ID = ID;
 }
 
+//Destructeurs
+CfPrison::~CfPrison() {
+    //nothing to do
+}
 
+void CfPrison::affichage(){
+    cout<< "[" << this->ID << "] - " << this->nom << endl;
+}
 

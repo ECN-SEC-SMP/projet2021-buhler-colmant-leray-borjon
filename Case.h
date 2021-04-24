@@ -15,16 +15,16 @@ class Case
     int ID;
     string nom;
 
-  public:
-    string getNom() const;
-    
+  public:    
     //constructeurs
     Case();
     Case(int ID, string nom);
+    ~Case();
 
     virtual void action(Joueur* joueur, Plateau* plateau, int d)=0;
     virtual void affichage()=0;
     int getID();
+    string getNom() const;
     void insererBatListe(int montant);
     int loyer();
 };

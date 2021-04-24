@@ -18,8 +18,13 @@ private:
     Plateau* plat;
     vector<CaseAchetable> vproprietes;
     int nbJPrison;
+    int nbGare;
     
 public:
+    // Constructeurs
+    Joueur(string nom, int id, Case* position, Plateau* plat);
+    ~Joueur();
+    
     string getNom() const;
     int getID() const;
     int getFortune() const;
@@ -28,17 +33,12 @@ public:
     void setPosition(Case* c);
     int getnbJPrison() const;
     void setnbJPrison(int nbJPrison);
+    int get_nbGare() const;
 
+    void ajouterGare();
     int lanceDe();
     void addPropriete(CaseAchetable* newPropriete);
     void paiement(int somme, Joueur* destinataire);
     void tourDeJeu();
-
-
-    // Constructeurs
-    Joueur(string nom, int id, Case* position, Plateau* plat);
-
-    // Destructeur
-    ~Joueur();
 
 };

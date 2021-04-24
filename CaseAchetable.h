@@ -16,6 +16,7 @@ class CaseAchetable: public Case {
 
   public:
     CaseAchetable(int ID, string nom);
+    ~CaseAchetable();
     
     void action(Joueur* j, Plateau* plateau, int d) override;
     void affichage();

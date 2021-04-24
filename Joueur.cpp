@@ -5,6 +5,22 @@
 
 using namespace std;
 
+//Constructeur
+Joueur::Joueur(string nom, int id, Case* position, Plateau* plat){
+    this->nom=nom;
+    this->ID=ID;
+    this->fortune=50000;
+    this->position=position;
+    this->plat=plat;
+    this->nbGare=0;
+}
+
+//Destructeurs
+Joueur::~Joueur() {
+    //nothing to do
+}
+
+//Setter & Getter
 string Joueur::getNom() const {
     return this->nom;
 }
@@ -36,6 +52,8 @@ int Joueur::getnbJPrison() const {
 void Joueur::setnbJPrison(int nbJPrison) {
     this->nbJPrison = nbJPrison;
 }
+
+//Fonctions
 
 //Si le joueur a assez d'argent pour payer, il paye le joueur destinataire. Sinon, il donne le reste de sa fortune au joueur destinataire et est éliminé.
 void Joueur::paiement(int somme, Joueur* destinataire) {
@@ -69,18 +87,12 @@ void Joueur::tourDeJeu() {
     this->position->action(this, this->plat, d);
 }
 
-
-
-//Constructeur
-Joueur::Joueur(string nom, int id, Case* position, Plateau* plat){
-    this->nom=nom;
-    this->ID=ID;
-    this->fortune=100000;
-    this->position=position;
-    this->plat=plat;
+int Joueur::get_nbGare() const
+{
+  return this->nbGare;
 }
 
-//Destructeurs
-Joueur::~Joueur() {
-    //nothing to do
+void Joueur::ajouterGare()
+{
+  this->nbGare =  (this->nbGare + 1) ;
 }

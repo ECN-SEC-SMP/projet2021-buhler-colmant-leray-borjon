@@ -10,8 +10,9 @@ class CfPrison: public CaseFixe
     vector<Joueur> Prison;
 
   public:
-    //constructeurs
+    //Constructeurs
     CfPrison(int ID, string nom);
-    // void action(Joueur* joueur, Plateau* plateau, int d);
+    ~CfPrison();
 
+    void affichage();
 };

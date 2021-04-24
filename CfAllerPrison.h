@@ -12,8 +12,9 @@ class CfAllerPrison: public CaseFixe
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     CfAllerPrison(int ID, string nom);
+    ~CfAllerPrison();
 
     //fonctions
     void action(Joueur* joueur, Plateau* plateau, int d);

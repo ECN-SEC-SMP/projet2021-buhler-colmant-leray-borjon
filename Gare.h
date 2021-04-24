@@ -10,8 +10,13 @@ class Gare: public CaseAchetable
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     Gare(int ID, string nom);
+    ~Gare();
+
     void action(Joueur* joueur, Plateau* plat, int de);
+    void affichage();
+    int loyer();
+    void achete(Joueur* joueur, int de);
 
 };
