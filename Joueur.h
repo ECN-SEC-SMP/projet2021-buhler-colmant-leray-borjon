@@ -31,9 +31,6 @@ public:
     void setPosition(Case case);
     int Joueur::getnbJPrison();
     void Joueur::setnbJPrison(int nbJPrison);
-}
-
-void Joueur::setnbJPrison(int nbJPrison) {
 
     int lanceDe();
     void addPropriete(CaseAchetable newPropriete);
