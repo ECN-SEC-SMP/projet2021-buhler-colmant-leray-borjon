@@ -9,7 +9,7 @@ using namespace std;
 Joueur::Joueur(string nom, int ID, Case* position, Plateau* plat){
     this->nom=nom;
     this->ID=ID;
-    this->fortune=5000;
+    this->fortune=7500;
     this->position=position;
     this->plat=plat;
     this->nbGare=0;

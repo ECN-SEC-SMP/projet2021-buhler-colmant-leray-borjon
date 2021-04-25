@@ -18,7 +18,7 @@ CfChance::~CfChance() {
 }
 
 void CfChance::action(Joueur* joueur, Plateau* plateau, int d){
-  joueur->setFortune(joueur->getFortune() + 0); //Le joueur gagne 1000 coin en passant sur la case chance
+  joueur->setFortune(joueur->getFortune() + 250); //Le joueur gagne 250 coin en passant sur la case chance
   cout << endl;
-  cout << "[ACTION] Le joueur " + joueur->getNom() + " est vraiment très chanceux aujourd'hui ! +500 coins !" << endl;
+  cout << "[ACTION] Le joueur " + joueur->getNom() + " est vraiment très chanceux aujourd'hui ! +250 coins !" << endl;
 } 

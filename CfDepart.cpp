@@ -18,7 +18,7 @@ CfDepart::~CfDepart() {
 }
 
 void CfDepart::action(Joueur* joueur, Plateau* plateau, int d){
-  joueur->setFortune(joueur->getFortune() + 2000); //Le joueur gagne 2000 coin en passant sur la case CfDepart
+  joueur->setFortune(joueur->getFortune() + 500); //Le joueur gagne 500 coin en passant sur la case CfDepart
   cout << endl;
-  cout << "[ACTION] Le joueur " << joueur->getNom() << " gagne 2000 coins en passant par la case Départ" << endl;
+  cout << "[ACTION] Le joueur " << joueur->getNom() << " gagne 500 coins en passant par la case Départ" << endl;
 }
