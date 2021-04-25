@@ -5,6 +5,7 @@
 #include "Joueur.h"
 class Joueur;
 #include "Case.h"
+class Case;
 
 
 using namespace std;
@@ -16,7 +17,11 @@ class Plateau {
         vector<Joueur> joueursInactifs;
 
     public:
+    //Constructeur
         Plateau();
+        ~Plateau();
+
+        Case* getCase(int c);
 
         void initPlateau();
         void affichage();
@@ -26,4 +31,5 @@ class Plateau {
         void jeu();
         void removeJoueur(Joueur* j);
         bool isGameOver();
+        void endScreen() const;
 };

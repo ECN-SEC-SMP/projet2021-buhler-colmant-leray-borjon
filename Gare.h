@@ -6,14 +6,17 @@
 class Gare: public CaseAchetable
 {
   private:
-    int batiment;
-    int coefValorisation;
 
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     Gare(int ID, string nom);
-    void action(Joueur joueur, int de);
+    ~Gare();
+
+    void action(Joueur* joueur, Plateau* plat, int de);
+    void affichage();
+    int loyer();
+    void acheter(Joueur* joueur, int de);
 
 };

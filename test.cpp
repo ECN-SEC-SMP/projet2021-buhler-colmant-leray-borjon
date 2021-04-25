@@ -5,4 +5,6 @@ int main() {
     Plateau plat = Plateau();
     plat.initPlateau();
     plat.jeu();
+    
+    
 }

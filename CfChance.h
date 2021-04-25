@@ -4,6 +4,7 @@
 #include "CaseFixe.h"
 #include "Joueur.h"
 
+
 class CfChance: public CaseFixe
 {
   private:
@@ -11,8 +12,10 @@ class CfChance: public CaseFixe
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     CfChance(int ID, string nom);
-    void action(Joueur joueur, int de);
+    ~CfChance();
+
+    void action(Joueur* joueur, Plateau* plateau, int d);
 
 };

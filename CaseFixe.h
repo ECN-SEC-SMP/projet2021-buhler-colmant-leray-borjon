@@ -10,8 +10,11 @@ class CaseFixe: public Case
   protected:
 
   public:
-    //constructeurs
+    //Constructeurs
     CaseFixe(int ID, string nom);
+    ~CaseFixe();
+    
+    void action(Joueur* j, Plateau* plateau, int d);
     void affichage();
 
 };

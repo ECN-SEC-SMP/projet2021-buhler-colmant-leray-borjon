@@ -3,17 +3,26 @@
 using namespace std;
 
 #include "Case.h"
+#include "Joueur.h"
 
-//constructeur
+//Constructeur
 Case::Case(int ID, string nom){
-    this->ID=ID;
-    this->nom=nom;
+    this->ID = ID;
+    this->nom = nom;
 }
 
+Case::~Case() {
+    //nothing to do
+}
+
+//Getter/Setter
 int Case::getID() {
   return this->ID;
 }
 
-void Case::action(){
-
+string Case::getNom() const {
+    return nom;
 }
+
+void Case::insererBatListe(int montant){}
+int Case::loyer(){}

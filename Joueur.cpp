@@ -1,16 +1,32 @@
-#include "Joueur.h"
 #include <stdlib.h>
 #include <iostream>
 
+#include "Joueur.h"
 
 using namespace std;
 
+//Constructeur
+Joueur::Joueur(string nom, int ID, Case* position, Plateau* plat){
+    this->nom=nom;
+    this->ID=ID;
+    this->fortune=7500;
+    this->position=position;
+    this->plat=plat;
+    this->nbGare=0;
+}
+
+//Destructeurs
+Joueur::~Joueur() {
+    //nothing to do
+}
+
+//Setter & Getter
 string Joueur::getNom() const {
     return this->nom;
 }
 
-int Joueur::getId() const {
-    return this->id;
+int Joueur::getID() const {
+    return ID;
 }
 
 int Joueur::getFortune() const {
@@ -25,49 +41,66 @@ void Joueur::setFortune(int fortune) {
     this->fortune = fortune;
 }
 
+void Joueur::setPosition(Case* position) {
+  this->position = position;
+}
+
+int Joueur::getnbJPrison() const {
+    return this->nbJPrison;
+}
+
+void Joueur::setnbJPrison(int nbJPrison) {
+    this->nbJPrison = nbJPrison;
+}
+
+//Fonctions
+
 //Si le joueur a assez d'argent pour payer, il paye le joueur destinataire. Sinon, il donne le reste de sa fortune au joueur destinataire et est éliminé.
-void Joueur::paiement(int somme, Joueur destinataire) {
-  if(somme < this->fortune){
-    destinataire.setFortune(destinataire.getFortune() + somme);
+void Joueur::paiement(int somme, Joueur* destinataire) {
+  if(somme <= this->fortune){
+    destinataire->setFortune(destinataire->getFortune() + somme);
     this->fortune -= somme;
-  }
-  else
+  } else
   {
-    destinataire.setFortune(destinataire.getFortune() + this->fortune);
-    this->fortune -= somme;
-    plat->removeJoueur(this);
+    destinataire->setFortune(destinataire->getFortune() + this->fortune);
+    this->plat->removeJoueur(this);
+    cout << "Le joueur " << this->nom << " est éliminé !" << endl;
   }
 }
 
 //Lancement d'un dé à 6 faces
 int Joueur::lanceDe() {
-    int aleat = rand()%6 + 1;
+    return rand()%6 + 1;
 }
 
 //Ajoute une propriété à un joueur
-void Joueur::addPropriete(Case *newPropriete) {
-    vproprietes.push_back(&newPropriete);
+void Joueur::addPropriete(CaseAchetable* newPropriete) {
+    vproprietes.push_back(*newPropriete);
 }
 
-//Jete le dé, change la position du joueur et affiche sa nouvelle position sous la forme "Le joueur Killian est en case 20(Gare du Nord)"
+
+//Jete le dé, change la position du joueur
 void Joueur::tourDeJeu() {
-    this -> position = this -> plat -> avance(this->position, lanceDe());
-    // cout << "Le joueur" << this->nom << "est en case" << this->id << "(" << this->position << ")" << endl;
-    this->position->action();
+    int d = this->lanceDe();
+    this->position = this->plat->avance(this->position, d);
+    this->position->action(this, this->plat, d);
 }
 
-
-
-//Constructeur
-Joueur::Joueur(string nom, int id, Case* position, Plateau* plat){
-    this->nom=nom;
-    this->id=id;
-    this->fortune=100000;
-    this->position=position;
-    this->plat=plat;
+int Joueur::get_nbGare() const
+{
+  return this->nbGare;
 }
 
-//Destructeurs
-Joueur::~Joueur() {
-    //nothing to do
+void Joueur::ajouterGare()
+{
+  this->nbGare =  (this->nbGare + 1) ;
+}
+
+// Surcharge de l'opérateur ==
+bool operator==(Joueur const& a, Joueur const& b)
+{
+    if (a.getNom() == b.getNom() && b.getID() == b.getID())
+        return true;
+    else
+        return false;
 }
