@@ -32,7 +32,7 @@ void CaseAchetable::affichage(){
   }
 }
 
-void CaseAchetable::acheter(Joueur* j){
+void CaseAchetable::achete(Joueur* j){
   if (this->proprio->getFortune() > prix) {
     this->proprio=j;
     this->proprio->setFortune(this->proprio->getFortune() - this->prix);

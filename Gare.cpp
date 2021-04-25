@@ -36,7 +36,7 @@ void Gare::affichage(){
 }
 
 //Fonction achete
-void Gare::achete(Joueur* joueur, int de) {
+void Gare::acheter(Joueur* joueur, int de) {
 // Si dé impair et pas de proprio on achète
     if (de%2 == 1 && (this->proprio == nullptr)) {
       if(joueur->getFortune() > this->prix){
@@ -66,11 +66,12 @@ int Gare::loyer(){
 void Gare::action(Joueur* joueur, Plateau* plat, int de) {
     //Si il n'y a pas de proprio
     if (this->proprio == nullptr){
-      this->achete(joueur, de);
+      this->acheter(joueur, de);
     }
     else{
-      joueur->setFortune(joueur->getFortune() - this->loyer());  //décremente fortune du joueur par rapport au prix du loyer
-      this->proprio->setFortune(this->proprio->getFortune() + this->loyer());//incrémente la fortune du proprio
+        joueur->paiement(this->loyer(), this->proprio);
+    //   joueur->setFortune(joueur->getFortune() - this->loyer());  //décremente fortune du joueur par rapport au prix du loyer
+    //   this->proprio->setFortune(this->proprio->getFortune() + this->loyer());//incrémente la fortune du proprio
       cout << endl;
       cout << "[ACTION] Le joueur " << joueur->getNom() << " vient de payer un loyer de " << this->loyer() << " au joueur " << this->proprio->getNom() << ", pour la " << this->getNom() << endl;
     }

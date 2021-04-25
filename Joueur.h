@@ -22,7 +22,7 @@ private:
     
 public:
     // Constructeurs
-    Joueur(string nom, int id, Case* position, Plateau* plat);
+    Joueur(string nom, int ID, Case* position, Plateau* plat);
     ~Joueur();
     
     string getNom() const;
@@ -40,5 +40,8 @@ public:
     void addPropriete(CaseAchetable* newPropriete);
     void paiement(int somme, Joueur* destinataire);
     void tourDeJeu();
+    
 
 };
+
+bool operator==(Joueur const& a, Joueur const& b);

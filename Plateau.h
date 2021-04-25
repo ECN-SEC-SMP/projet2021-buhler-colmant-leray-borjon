@@ -31,4 +31,5 @@ class Plateau {
         void jeu();
         void removeJoueur(Joueur* j);
         bool isGameOver();
+        void endScreen() const;
 };

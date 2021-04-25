@@ -41,7 +41,7 @@ void EmplacementConstructible::affichage(){
 }
 
 //Fonction Achete
-void EmplacementConstructible::achete(Joueur* joueur, int de) {
+void EmplacementConstructible::acheter(Joueur* joueur, int de) {
 // Si dé impair et pas de proprio on achète
     if (de%2 == 1 && !(this->proprio != nullptr)) {
       if(joueur->getFortune() > this->prix){ //si l'acheteur a assez d'argent pour acheter
@@ -53,7 +53,7 @@ void EmplacementConstructible::achete(Joueur* joueur, int de) {
       }
       else {
         cout << endl;
-        cout << "[ACTION] Le joueur " << joueur->getNom() << "ne possède pas assez d'argent pour acheter la propriété" << endl; 
+        cout << "[ACTION] Le joueur " << joueur->getNom() << " ne possède pas assez d'argent pour acheter la propriété" << endl; 
       }
     }
 }
@@ -68,14 +68,14 @@ int EmplacementConstructible::loyer(){
 void EmplacementConstructible::action(Joueur* joueur, Plateau* plat, int de) {
     //Si il n'y a pas de proprio
     if (!(this->proprio != nullptr)){
-      this->achete(joueur, de); //appel fonction achete
+      this->acheter(joueur, de); //appel fonction achete
     }
     else{
-      joueur->setFortune(joueur->getFortune() - this->loyer());  //décremente fortune du joueur par rapport au prix du loyer
-      this->proprio->setFortune(this->proprio->getFortune() + this->loyer());//incrémente la fortune du proprio
+        joueur->paiement(this->loyer(), this->proprio);
+    //   joueur->setFortune(joueur->getFortune() - this->loyer());  //décremente fortune du joueur par rapport au prix du loyer
+    //   this->proprio->setFortune(this->proprio->getFortune() + this->loyer());//incrémente la fortune du proprio
       cout << endl;
       cout << "[ACTION] Le joueur " << joueur->getNom() << " vient de payer un loyer de " << this->loyer() << " au joueur " << this->proprio->getNom() << ", pour la case " << this->getNom() << endl;
     }
 
 }
-

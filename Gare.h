@@ -17,6 +17,6 @@ class Gare: public CaseAchetable
     void action(Joueur* joueur, Plateau* plat, int de);
     void affichage();
     int loyer();
-    void achete(Joueur* joueur, int de);
+    void acheter(Joueur* joueur, int de);
 
 };

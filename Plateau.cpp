@@ -110,7 +110,10 @@ void Plateau::affichage() {
     for (Joueur& j : this->joueursActifs) {
             cout << "Le joueur " << j.getNom() << " est en case [" << j.getPosition()->getID() << " - " << j.getPosition()->getNom() << "] | Fortune : " << j.getFortune() << endl;
     }
-
+    cout << "Joueurs inactifs : " << endl;
+    for (Joueur& j : this->joueursInactifs) {
+            cout << "Le joueur " << j.getNom() << endl;
+    }
     cout << "################# FIN DU TOUR #################" << endl << endl;
 }
 
@@ -123,16 +126,18 @@ void Plateau::jeu() {
             this->affichage();
         }
     }
+    this->endScreen();
 }
 
 // Enlève un joueur des joueurs actifs
 void Plateau::removeJoueur(Joueur* j) {
-    // vector<Joueur>::iterator it;
-    // it = find(this->joueursActifs.begin(), this->joueursActifs.end(), j);
-    // if(it != this->joueursActifs.end()) {
-    //     this->joueursActifs.erase(it);
-    //     this->joueursInactifs.push_back(*j);
-    // } 
+    cout << "Joueur à supprimer : " << j->getNom() << endl;
+    vector<Joueur>::iterator it;
+    it = find(this->joueursActifs.begin(), this->joueursActifs.end(), *j);
+    if(it != this->joueursActifs.end()) {
+        this->joueursActifs.erase(it);
+        this->joueursInactifs.push_back(*j);
+    } 
 }
 
 // Vérifie si la partie est finie
@@ -141,5 +146,19 @@ bool Plateau::isGameOver() {
         return true;
     } else {
         return false;
+    }
+}
+
+// Affiche le résultats de la partie
+void Plateau::endScreen() const {
+    cout << endl;
+    cout << "############### FIN DE LA PARTIE ###############";
+    cout << endl;
+    cout << " [1] : " << this->joueursActifs[0].getNom() << endl;
+    for (int i = this->joueursInactifs.size() - 1; i >= 0 ; i--) {
+        cout << " [" << this->joueursInactifs.size() - i + 1 << "] : " << this->joueursInactifs[i].getNom() << endl;
+    }
+    for (int i = 0; i <= this->joueursInactifs.size() ; i++) {
+        cout << this->joueursInactifs[i].getNom() << endl;
     }
 }

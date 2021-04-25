@@ -6,10 +6,10 @@
 using namespace std;
 
 //Constructeur
-Joueur::Joueur(string nom, int id, Case* position, Plateau* plat){
+Joueur::Joueur(string nom, int ID, Case* position, Plateau* plat){
     this->nom=nom;
     this->ID=ID;
-    this->fortune=50000;
+    this->fortune=5000;
     this->position=position;
     this->plat=plat;
     this->nbGare=0;
@@ -57,15 +57,14 @@ void Joueur::setnbJPrison(int nbJPrison) {
 
 //Si le joueur a assez d'argent pour payer, il paye le joueur destinataire. Sinon, il donne le reste de sa fortune au joueur destinataire et est éliminé.
 void Joueur::paiement(int somme, Joueur* destinataire) {
-  if(somme < this->fortune){
+  if(somme <= this->fortune){
     destinataire->setFortune(destinataire->getFortune() + somme);
     this->fortune -= somme;
-  }
-  else
+  } else
   {
     destinataire->setFortune(destinataire->getFortune() + this->fortune);
-    this->fortune -= somme;
     this->plat->removeJoueur(this);
+    cout << "Le joueur " << this->nom << " est éliminé !" << endl;
   }
 }
 
@@ -83,7 +82,7 @@ void Joueur::addPropriete(CaseAchetable* newPropriete) {
 //Jete le dé, change la position du joueur
 void Joueur::tourDeJeu() {
     int d = this->lanceDe();
-    this -> position = this -> plat -> avance(this->position, d);
+    this->position = this->plat->avance(this->position, d);
     this->position->action(this, this->plat, d);
 }
 
@@ -95,4 +94,13 @@ int Joueur::get_nbGare() const
 void Joueur::ajouterGare()
 {
   this->nbGare =  (this->nbGare + 1) ;
+}
+
+// Surcharge de l'opérateur ==
+bool operator==(Joueur const& a, Joueur const& b)
+{
+    if (a.getNom() == b.getNom() && b.getID() == b.getID())
+        return true;
+    else
+        return false;
 }

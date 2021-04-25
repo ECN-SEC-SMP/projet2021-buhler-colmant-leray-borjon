@@ -20,6 +20,6 @@ class CaseAchetable: public Case {
     
     void action(Joueur* j, Plateau* plateau, int d) override;
     void affichage();
-    void acheter(Joueur *j);
+    void achete(Joueur *j);
     int getPrix() const;
 };

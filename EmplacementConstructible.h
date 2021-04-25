@@ -25,7 +25,7 @@ class EmplacementConstructible: public CaseAchetable
 
     void insererBatListe(int montant);
     int loyer();
-    void achete(Joueur* joueur, int de);
+    void acheter(Joueur* joueur, int de);
     void action(Joueur* joueur, Plateau* plat, int de) override;
     void affichage();
 
